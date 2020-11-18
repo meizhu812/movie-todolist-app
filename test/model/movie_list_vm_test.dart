@@ -8,8 +8,6 @@ class MockService extends Mock implements MovieService {}
 
 class MockMovie extends Mock implements Movie {}
 
-class MockMovieVM extends Mock implements MovieViewModel {}
-
 main() {
   group('fetchMovies', () {
     final mockService = MockService();
@@ -24,7 +22,7 @@ main() {
 
       expect(
           vm.movies,
-          isA<List<MovieViewModel>>()
+          isA<List<Movie>>()
               .having((movies) => movies.length, 'length', equals(4)));
     });
   });

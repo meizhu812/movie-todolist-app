@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:movie_todolist/service/dto/Movie.dart';
+import 'package:movie_todolist/service/dto/movie.dart';
 import 'package:http/http.dart' as http;
 
 const API_KEY = "31aa985c";
@@ -13,9 +13,9 @@ class MovieService {
     final url = "http://www.omdbapi.com/?s=$keyword&apikey=$API_KEY";
     final response = await _client.get(url);
     if (response.statusCode == 200) {
-      final body = jsonDecode(response.body);
-      final Iterable json = body["Search"];
-      return json.map((movie) => Movie.fromJson(movie)).toList();
+      return jsonDecode(response.body)["Search"]
+          .map((movie) => Movie.fromJson(movie))
+          .toList();
     } else {
       throw Exception("Request Failed!");
     }

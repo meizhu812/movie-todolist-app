@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_todolist/service/dto/Movie.dart';
+import 'package:movie_todolist/service/dto/movie.dart';
 
 class MovieVM extends ChangeNotifier {
   final Movie _movie;

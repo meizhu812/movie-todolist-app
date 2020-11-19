@@ -2,7 +2,7 @@ import 'package:movie_todolist/model/movie_list_vm.dart';
 import 'package:movie_todolist/model/movie_vm.dart';
 import 'package:test/test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:movie_todolist/service/dto/Movie.dart';
+import 'package:movie_todolist/service/dto/movie.dart';
 import 'package:movie_todolist/service/movie_service.dart';
 
 class MockService extends Mock implements MovieService {}

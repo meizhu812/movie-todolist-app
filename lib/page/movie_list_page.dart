@@ -44,7 +44,9 @@ class _MovieListPageState extends State<MovieListPage> {
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                     hintText: "Search",
-                    hintStyle: TextStyle(color: Colors.white),
+                    hintStyle: TextStyle(
+                      color: Colors.white,
+                    ),
                     border: InputBorder.none),
               ),
             ),

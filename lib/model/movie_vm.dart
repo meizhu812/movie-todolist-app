@@ -3,8 +3,8 @@ import 'package:movie_todolist/service/dto/Movie.dart';
 
 class MovieVM extends ChangeNotifier {
   final Movie _movie;
-  bool isFavorite;
-  bool isWatched;
+  bool isFavorite = false;
+  bool isWatched = false;
 
   MovieVM(Movie movie) : _movie = movie;
 

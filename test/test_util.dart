@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 Widget wrapWidget(Widget widget) {
   return MaterialApp(
-    home: widget,
+    home: Scaffold(
+      body: widget,
+    ),
   );
 }

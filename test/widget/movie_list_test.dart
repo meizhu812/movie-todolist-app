@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:movie_todolist/model/movie_vm.dart';
 import 'package:movie_todolist/service/dto/Movie.dart';
 import 'package:movie_todolist/service/movie_service.dart';
 import 'package:movie_todolist/widget/movie_list.dart';
@@ -23,7 +24,7 @@ main() {
       final movies = [
         Movie(title: "Demo 1", year: "2001", posterUrl: "url1"),
         Movie(title: "Demo 2", year: "2002", posterUrl: "url2")
-      ];
+      ].map((movie) => MovieVM(movie)).toList();
 
       await mockNetworkImagesFor(
           () => tester.pumpWidget(wrapWidget(MovieList(movies: movies))));

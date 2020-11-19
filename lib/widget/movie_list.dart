@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:movie_todolist/service/dto/Movie.dart';
+import 'package:movie_todolist/model/movie_vm.dart';
 
 class MovieList extends StatelessWidget {
-  final List<Movie> movies;
+  final List<MovieVM> movies;
 
   MovieList({this.movies});
 

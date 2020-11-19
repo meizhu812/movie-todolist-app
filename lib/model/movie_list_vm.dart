@@ -3,13 +3,17 @@ import 'package:movie_todolist/service/dto/Movie.dart';
 import 'package:movie_todolist/service/movie_service.dart';
 
 class MovieListViewModel extends ChangeNotifier {
-  List<Movie> movies = List<Movie>();
+  List<Movie> _movies = List<Movie>();
   final MovieService movieService;
+
+  List<Movie> get movies {
+    return this._movies;
+  }
 
   MovieListViewModel({this.movieService});
 
   Future<void> fetchMovies(String keyword) async {
-    this.movies = await movieService.fetchMovies(keyword);
+    this._movies = await movieService.fetchMovies(keyword);
     notifyListeners();
   }
 }

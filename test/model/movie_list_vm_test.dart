@@ -12,7 +12,7 @@ class MockMovie extends Mock implements Movie {}
 main() {
   group('fetchMovies', () {
     final mockService = MockService();
-    final vm = MovieListViewModel(movieService: mockService);
+    final vm = MovieListViewModel(mockService);
 
     test('stores a List of MovieViewModel if success', () async {
       final mockMovies = List.filled(4, MockMovie());

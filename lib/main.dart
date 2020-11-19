@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Movies",
       home: ChangeNotifierProvider(
-        create: (context) => MovieListViewModel(movieService: movieService),
+        create: (context) => MovieListViewModel(movieService),
         child: MovieListPage(),
       ),
     );

@@ -11,14 +11,16 @@ void main() {
 
 class MyApp extends StatelessWidget {
   final movieService = MovieService(Client());
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "Movies",
-        home: ChangeNotifierProvider(
-          create: (context) => MovieListViewModel(movieService: movieService),
-          child: MovieListPage(),
-        ));
+      title: "Movies",
+      home: ChangeNotifierProvider(
+        create: (context) => MovieListViewModel(movieService: movieService),
+        child: MovieListPage(),
+      ),
+    );
   }
 }

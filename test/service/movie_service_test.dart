@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:test/test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:http/http.dart' as http;
@@ -12,10 +14,10 @@ main() {
     final mockService = MovieService(mockClient);
 
     test('returns a List of Movies if success', () async {
-      final mockJsonString =
-          '{"Search":[{"Title":"Batman Begins","Year":"2005","imdbID":"tt0372784","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTg3YjEtMDQyM2ZjYzQ5YWFkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"},{"Title":"Batman Returns","Year":"1992","imdbID":"tt0103776","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BOGZmYzVkMmItM2NiOS00MDI3LWI4ZWQtMTg0YWZkODRkMmViXkEyXkFqcGdeQXVyODY0NzcxNw@@._V1_SX300.jpg"},{"Title":"Batman: The Dark Knight Returns, Part 1","Year":"2012","imdbID":"tt2313197","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BMzIxMDkxNDM2M15BMl5BanBnXkFtZTcwMDA5ODY1OQ@@._V1_SX300.jpg"}]}';
+      final mockResString =
+          await (File('res/mockResponse.json')).readAsString();
       when(mockClient.get("http://www.omdbapi.com/?s=Batman&apikey=$API_KEY"))
-          .thenAnswer((_) async => http.Response(mockJsonString, 200));
+          .thenAnswer((_) async => http.Response(mockResString, 200));
 
       expect(await mockService.fetchMovies("Batman"), isA<List<Movie>>());
     });

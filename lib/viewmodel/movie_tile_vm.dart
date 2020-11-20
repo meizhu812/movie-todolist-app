@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:movie_todolist/service/model/movie.dart';
 
-class MovieVM extends ChangeNotifier {
+class MovieTileVM extends ChangeNotifier {
   final Movie _movie;
   bool isFavorite = false;
   bool isWatched = false;
 
-  MovieVM(Movie movie) : _movie = movie;
+  MovieTileVM(Movie movie) : _movie = movie;
 
   String get title => _movie.title;
 

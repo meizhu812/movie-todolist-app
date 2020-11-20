@@ -1,5 +1,5 @@
 import 'package:movie_todolist/viewmodel/movie_list_vm.dart';
-import 'package:movie_todolist/viewmodel/movie_vm.dart';
+import 'package:movie_todolist/viewmodel/movie_tile_vm.dart';
 import 'package:test/test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:movie_todolist/service/model/movie.dart';
@@ -23,7 +23,7 @@ main() {
 
       expect(
           vm.movies,
-          isA<List<MovieVM>>()
+          isA<List<MovieTileVM>>()
               .having((movies) => movies.length, 'length', equals(4)));
     });
   });

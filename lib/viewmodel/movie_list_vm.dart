@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:movie_todolist/viewmodel/movie_vm.dart';
+import 'package:movie_todolist/viewmodel/movie_tile_vm.dart';
 import 'package:movie_todolist/service/movie_service.dart';
 
 class MovieListViewModel extends ChangeNotifier {
-  List<MovieVM> _movies = List<MovieVM>();
+  List<MovieTileVM> _movies = List<MovieTileVM>();
   final MovieService _movieService;
 
-  List<MovieVM> get movies {
+  List<MovieTileVM> get movies {
     return this._movies;
   }
 
@@ -14,7 +14,7 @@ class MovieListViewModel extends ChangeNotifier {
 
   Future<void> fetchMovies(String keyword) async {
     this._movies = (await _movieService.fetchMovies(keyword))
-        .map((movie) => MovieVM(movie))
+        .map((movie) => MovieTileVM(movie))
         .toList();
     notifyListeners();
   }

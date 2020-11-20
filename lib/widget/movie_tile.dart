@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_todolist/viewmodel/movie_vm.dart';
+import 'package:movie_todolist/viewmodel/movie_tile_vm.dart';
 
 class MovieTile extends StatelessWidget {
   const MovieTile({
@@ -7,7 +7,7 @@ class MovieTile extends StatelessWidget {
     @required this.movie,
   }) : super(key: key);
 
-  final MovieVM movie;
+  final MovieTileVM movie;
 
   @override
   Widget build(BuildContext context) {

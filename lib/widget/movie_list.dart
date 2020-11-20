@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:movie_todolist/viewmodel/movie_vm.dart';
+import 'package:movie_todolist/viewmodel/movie_tile_vm.dart';
 import 'movie_tile.dart';
 
 class MovieList extends StatelessWidget {
-  final List<MovieVM> movies;
+  final List<MovieTileVM> movies;
 
   MovieList({this.movies});
 

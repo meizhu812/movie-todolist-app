@@ -1,0 +1,22 @@
+[
+  {
+    "imdbID": "tt0076759",
+    "isFavorite": false,
+    "isWatched": true
+  },
+  {
+    "imdbID": "tt0080684",
+    "isFavorite": false,
+    "isWatched": true
+  },
+  {
+    "imdbID": "tt0086190",
+    "isFavorite": true,
+    "isWatched": true
+  },
+  {
+    "imdbID": "tt3748528",
+    "isFavorite": true,
+    "isWatched": true
+  }
+]

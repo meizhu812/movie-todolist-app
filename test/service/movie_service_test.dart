@@ -13,18 +13,14 @@ main() {
     final mockClient = MockClient();
     final mockService = MovieService(mockClient);
 
-    test('returns a List of Movies if success', () async {
-      final mockResString =
-          await (File('res/mockResponse.json')).readAsString();
-      when(mockClient.get("http://www.omdbapi.com/?s=Batman&apikey=$API_KEY"))
-          .thenAnswer((_) async => http.Response(mockResString, 200));
+    test('returns response if success', () async {
+      when(mockClient.get(any)).thenAnswer((_) async => http.Response("", 200));
 
-      expect(await mockService.fetchMovies("Batman"), isA<List<Movie>>());
+      expect(await mockService.fetchMovies("Batman"), isA<http.Response>());
     });
 
     test('throws an exception if error happens', () {
-      when(mockClient
-              .get("http://www.omdbapi.com/?s=ThreeBody&apikey=$API_KEY"))
+      when(mockClient.get(any))
           .thenAnswer((_) async => http.Response('Not Found', 404));
 
       expect(mockService.fetchMovies("ThreeBody"), throwsException);

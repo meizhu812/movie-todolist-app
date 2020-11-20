@@ -15,4 +15,8 @@ class MovieStatusService {
         key: (json) => json["id"],
         value: (json) => MovieStatus.fromJson(json));
   }
+
+  MovieStatus getMovieStatusById(String id) {
+    return _movieStatusMap[id] ?? MovieStatus(id: id);
+  }
 }

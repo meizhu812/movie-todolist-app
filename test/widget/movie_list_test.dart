@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:movie_todolist/model/movie_vm.dart';
-import 'package:movie_todolist/service/dto/movie.dart';
+import 'package:movie_todolist/viewmodel/movie_vm.dart';
+import 'package:movie_todolist/service/model/movie.dart';
 import 'package:movie_todolist/service/movie_service.dart';
 import 'package:movie_todolist/widget/movie_list.dart';
 import 'package:network_image_mock/network_image_mock.dart';

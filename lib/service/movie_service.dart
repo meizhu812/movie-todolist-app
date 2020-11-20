@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:movie_todolist/service/dto/movie.dart';
+import 'package:movie_todolist/service/model/movie.dart';
 import 'package:http/http.dart' as http;
 
 const API_KEY = "31aa985c";

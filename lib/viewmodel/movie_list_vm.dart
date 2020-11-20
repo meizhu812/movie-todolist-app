@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_todolist/model/movie_vm.dart';
+import 'package:movie_todolist/viewmodel/movie_vm.dart';
 import 'package:movie_todolist/service/movie_service.dart';
 
 class MovieListViewModel extends ChangeNotifier {

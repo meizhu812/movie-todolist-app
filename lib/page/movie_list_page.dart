@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_todolist/model/movie_list_vm.dart';
+import 'package:movie_todolist/viewmodel/movie_list_vm.dart';
 import 'package:movie_todolist/widget/movie_list.dart';
 import 'package:provider/provider.dart';
 

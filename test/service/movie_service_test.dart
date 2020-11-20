@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:test/test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:http/http.dart' as http;
-import 'package:movie_todolist/service/dto/movie.dart';
+import 'package:movie_todolist/service/model/movie.dart';
 import 'package:movie_todolist/service/movie_service.dart';
 
 class MockClient extends Mock implements http.Client {}

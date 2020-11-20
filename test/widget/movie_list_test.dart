@@ -10,27 +10,43 @@ import '../test_util.dart';
 
 class MockService extends Mock implements MovieService {}
 
-class MockMovie extends Mock implements Movie {}
+class MockMovieTileVM extends Mock implements MovieTileVM {
+  @override
+  bool isFavorite = true;
+  @override
+  bool isWatched = false;
+
+  @override
+  String get title {
+    return "title";
+  }
+
+  @override
+  String get year {
+    return "year";
+  }
+
+  @override
+  String get posterUrl {
+    return "url";
+  }
+}
 
 main() {
   group('render movie list', () {
     testWidgets('render empty list', (WidgetTester tester) async {
       await mockNetworkImagesFor(
-          () => tester.pumpWidget(wrapWidget(MovieList(movies: []))));
+          () => tester.pumpWidget(wrapWidget(MovieList(movieVMs: []))));
 
       expect(find.byType(ListTile), findsNothing);
     });
 
     testWidgets('render filled list', (WidgetTester tester) async {
-      final movies = [
-        Movie(title: "Demo 1", year: "2001", posterUrl: "url1"),
-        Movie(title: "Demo 2", year: "2002", posterUrl: "url2")
-      ].map((movie) => MovieTileVM(movie)).toList();
+      final mockMovieVMs = List.filled(4, MockMovieTileVM());
+      await mockNetworkImagesFor(() =>
+          tester.pumpWidget(wrapWidget(MovieList(movieVMs: mockMovieVMs))));
 
-      await mockNetworkImagesFor(
-          () => tester.pumpWidget(wrapWidget(MovieList(movies: movies))));
-
-      expect(find.byType(ListTile), findsNWidgets(2));
+      expect(find.byType(ListTile), findsNWidgets(4));
     });
   });
 }

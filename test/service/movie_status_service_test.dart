@@ -1,11 +1,13 @@
 import 'dart:io';
 
+import 'package:flutter_test/flutter_test.dart' show TestWidgetsFlutterBinding;
 import 'package:movie_todolist/service/model/movie_status.dart';
 import 'package:movie_todolist/service/movie_status_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:test/test.dart';
+import 'package:test/test.dart' show equals, expect, group, isA, isFalse, isTrue, test;
 
 main() async {
+  TestWidgetsFlutterBinding.ensureInitialized();
   SharedPreferences.setMockInitialValues(
       {"movie_status": await (File('res/mockStatus.json')).readAsString()});
   final movieStatusService = MovieStatusService();

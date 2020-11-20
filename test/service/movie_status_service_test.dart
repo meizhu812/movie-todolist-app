@@ -16,9 +16,9 @@ main() {
       await movieStatusService.fetchMovieStatus();
 
       expect(
-          movieStatusService.movieStatusList,
-          isA<List<MovieStatus>>()
-              .having((list) => list.length, "length", equals(4)));
+          movieStatusService.movieStatusMap,
+          isA<Map<String, MovieStatus>>()
+              .having((map) => map.entries.length, "length", equals(4)));
     });
   });
 }

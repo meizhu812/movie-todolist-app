@@ -50,7 +50,7 @@ class _MovieListPageState extends State<MovieListPage> {
                     border: InputBorder.none),
               ),
             ),
-            Expanded(child: MovieList(movies: vm.movies))
+            Expanded(child: MovieList(movieVMs: vm.movies))
           ],
         ),
       ),

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:movie_todolist/service/model/movie_status.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 class MovieStatusService {
   Map<String, MovieStatus> _movieStatusMap;
@@ -10,10 +11,9 @@ class MovieStatusService {
 
   Future<void> fetchMovieStatus() async {
     final pref = await SharedPreferences.getInstance();
-    _movieStatusMap = Map.fromIterable(
-        (jsonDecode(pref.getString('movie_status')) as Iterable),
-        key: (json) => json["id"],
-        value: (json) => MovieStatus.fromJson(json));
+    var status = await rootBundle.loadString("res/mockStatus.json");
+    _movieStatusMap = Map.fromIterable((jsonDecode(status) as Iterable),
+        key: (json) => json["id"], value: (json) => MovieStatus.fromJson(json));
   }
 
   MovieStatus getMovieStatusById(String id) {

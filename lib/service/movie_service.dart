@@ -13,7 +13,7 @@ class MovieService {
     final url = "http://www.omdbapi.com/?s=$keyword&apikey=$API_KEY";
     final response = await _client.get(url);
     if (response.statusCode == 200) {
-      return jsonDecode(response.body)["Search"]
+      return (jsonDecode(response.body)["Search"] as Iterable)
           .map((movie) => Movie.fromJson(movie))
           .toList();
     } else {

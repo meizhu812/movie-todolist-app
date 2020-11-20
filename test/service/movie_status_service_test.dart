@@ -13,10 +13,10 @@ main() {
       SharedPreferences.setMockInitialValues(
           {"movie_status": await (File('res/mockStatus.json')).readAsString()});
 
-      final movieStatusList = await movieStatusService.fetchMovieStatus();
+      await movieStatusService.fetchMovieStatus();
 
       expect(
-          movieStatusList,
+          movieStatusService.movieStatusList,
           isA<List<MovieStatus>>()
               .having((list) => list.length, "length", equals(4)));
     });
